@@ -19,7 +19,6 @@ export const useStage = (player, resetPlayer) => {
           ack.unshift(new Array(newStage[0].length).fill([0, 'clear']))
           return ack;
         }
-        console.log(ack, row)
         ack.push(row)
         return ack
       }, [])
@@ -56,5 +55,5 @@ export const useStage = (player, resetPlayer) => {
     setStage(prev => updateStage(prev));
   }, [player, resetPlayer]);
 
-  return [stage, setStage];
+  return [stage, setStage, rowsCleared];
 }
